@@ -21,5 +21,5 @@ jobs:
       - name: Deploy  # S3にデプロイ 
         working-directory: ./src
         run:
-          aws s3 sync . s3://bucket-for-web-site --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude "README.md"
+          aws s3 sync . s3://bucket-for-web-site --delete --exclude "README.md"
 

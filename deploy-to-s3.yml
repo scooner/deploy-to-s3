@@ -2,13 +2,13 @@ name: Deploy to S3
 on:
   push:
       branches:
-        - master
+        - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master  # リポジトリをチェックアウト
+        uses: actions/checkout@main  # リポジトリをチェックアウト
 
       - name: Deploy  # S3にデプロイ 
         env:
@@ -17,4 +17,3 @@ jobs:
         run: |　# S3のbucket-for-deploying-react-projectバケットにデプロイ
           aws s3 cp ./src --recursive build s3://bucket-for-web-site
 
-          
